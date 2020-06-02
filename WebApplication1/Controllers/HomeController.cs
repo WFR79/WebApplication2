@@ -29,6 +29,7 @@ namespace WebApplication1.Controllers
         {
             var ctx = WindowsIdentity.GetCurrent().Name;
             //PrincipalContext principalContext = new PrincipalContext(ContextType.Domain, "HOME");
+
             HttpContext.Cache.Insert("ctx", ctx, null, DateTime.Now.AddMinutes(60), Cache.NoSlidingExpiration);
             return View(ctx);
         }
